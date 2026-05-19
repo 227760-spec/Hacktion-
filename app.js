@@ -346,4 +346,44 @@ function buildSpecs(p) {
       <p class="spec-label">${label}</p>
       <p class="spec-value">${esc(value)}</p>
     </div>
-  `).join(''
+  `).join('');
+}
+
+function renderStars(rating) {
+  const full  = Math.round(rating);
+  const stars = [];
+  for (let i = 1; i <= 5; i++) stars.push(i <= full ? '★' : '☆');
+  return stars.join('');
+}
+
+function formatDate(iso) {
+  if (!iso) return '';
+  return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+function esc(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// ── Event Listeners ────────────────────────────────────
+$loadMoreBtn.addEventListener('click', () => fetchProducts(false));
+
+$searchInput.addEventListener('input', () => {
+  state.searchQuery = $searchInput.value;
+  $grid.innerHTML = '';
+  applyFilters();
+});
+
+$categoryBar.querySelector('[data-cat="all"]').addEventListener('click', () => setCategory('all'));
+
+$backBtn.addEventListener('click', () => navigate('#/'));
+
+window.addEventListener('hashchange', router);
+
+// ── Init ───────────────────────────────────────────────
+router();
