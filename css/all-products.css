@@ -1,0 +1,43 @@
+.site-header {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.category-bar {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+}
+
+.cat-btn {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.cat-btn.active {
+  background: #1a1612;
+  color: white;
+}
+
+.catalog-main {
+  padding: 30px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  background: white;
+  padding: 16px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
