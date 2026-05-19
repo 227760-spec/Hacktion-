@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopLens — Product Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════ CATALOG PAGE ══════════════ -->
+  <div id="page-catalog" class="page active">
+
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo">Shop<em>Lens</em></div>
+        <div class="header-meta">
+          <span class="tagline">Curated goods · Honest prices</span>
+          <div class="search-wrap">
+            <input id="search-input" type="text" placeholder="Search products…" autocomplete="off" />
+            <span class="search-icon">⌕</span>
+          </div>
+        </div>
+      </div>
+      <div class="category-bar">
+        <button class="cat-btn active" data-cat="all">All</button>
+      </div>
+    </header>
+
+    <main class="catalog-main">
+      <div class="catalog-hero">
+        <p class="hero-eyebrow">New arrivals · 194 items</p>
+        <h1 class="hero-title">Discover<br /><em>Everything.</em></h1>
+      </div>
+
+      <div id="products-grid" class="products-grid">
+        <!-- cards injected by JS -->
+      </div>
+
+      <div class="load-more-wrap">
+        <button id="load-more-btn" class="load-more-btn">Load more products</button>
+        <p id="count-label" class="count-label"></p>
+      </div>
+    </main>
+
+    <div id="loading-overlay" class="loading-overlay">
+      <div class="spinner"></div>
+      <p>Fetching products…</p>
+    </div>
+  </div>
+
+  <!-- ══════════════ PRODUCT DETAIL PAGE ══════════════ -->
+  <div id="page-detail" class="page">
+
+    <header class="detail-header">
+      <button id="back-btn" class="back-btn">← Back to catalog</button>
+      <div class="logo">Shop<em>Lens</em></div>
+    </header>
+
+    <main class="detail-main" id="detail-content">
+      <!-- injected by JS -->
+    </main>
+
+    <div id="detail-loading" class="loading-overlay">
+      <div class="spinner"></div>
+      <p>Loading product…</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
