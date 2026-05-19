@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Products</title>
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/all-products.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>ShopLens</h1>
+
+    <input 
+      type="text" 
+      id="search-input" 
+      placeholder="Search products..."
+    >
+  </header>
+
+  <section class="category-bar">
+    <button class="cat-btn active" data-cat="all">All</button>
+  </section>
+
+  <main class="catalog-main">
+    <h2>Discover Everything</h2>
+
+    <section id="products-grid" class="products-grid"></section>
+
+    <button id="load-more-btn">Load more products</button>
+    <p id="count-label"></p>
+  </main>
+
+  <div id="loading-overlay" class="loading-overlay">
+    Fetching products…
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/all-products.js"></script>
+</body>
+</html>
