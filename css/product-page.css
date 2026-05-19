@@ -1,0 +1,29 @@
+.detail-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.detail-main {
+  padding: 40px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 450px;
+}
+
+.detail-info h2 {
+  margin-bottom: 15px;
+}
+
+.detail-info p {
+  margin-bottom: 10px;
+}
